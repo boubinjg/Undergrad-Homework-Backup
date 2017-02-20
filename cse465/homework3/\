@@ -1,0 +1,30 @@
+% hw3.pl
+
+maxnums(A, B, MAX) :- (A>B -> MAX is A; MAX is B).
+
+sum([], 0).
+sum([H|T], Sum) :- sum(T, Sum1), Sum is H + Sum1.
+
+father(mark, kelly).
+father(mark, adam).
+
+mother(carol, kelly).
+mother(carol, adam).
+
+parent(X, Y) :- father(X, Y).
+parent(X, Y) :- mother(X, Y).
+
+female(kelly).
+female(carol).
+male(adam).
+male(mark).
+
+sister(X, Y) :- parent(Z, Y), parent(Z, X), female(Y), X\==Y.
+
+max([M],M).
+max([H|L], M) :- max(L, NM), (H > NM -> M is H ; M is NM).
+
+partitionable([H|T]) :- partition([H],T).
+partitionable([H]) :- H == 0.
+partition([H1|T1], [H2|T2]) :- sum([H1|T1],A), sum([H2|T2],B), A == B.
+partition([H1|T1], [H2|T2]) :- partition([H1|T2|H2], T2]).

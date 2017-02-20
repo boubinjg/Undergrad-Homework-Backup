@@ -1,0 +1,5 @@
+a = "hello world" ;
+b = " one two three four" ;
+a += b ;
+PRINT a ;
+PRINT b ; 

@@ -1,0 +1,1 @@
+'AL', 'AR', 'AR', 'CT', 'GA', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'NC', 'NC', 'NE', 'NH', 'NJ', 'NY', 'NY', 'OH', 'OH', 'PA', 'SD', 'TN', 'TN', 'TN', 'TN', 'TN', 'TX', 'VA', 'VT', 'WI', 'WV'

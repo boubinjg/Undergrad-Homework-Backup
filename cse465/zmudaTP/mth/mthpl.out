@@ -1,0 +1,5 @@
+compiling /home/boubinjg/cse465/zmudaTP/mth/mth.pl for byte code...
+/home/boubinjg/cse465/zmudaTP/mth/mth.pl compiled, 9 lines read - 1238 bytes written, 5 ms
+no:mnCousins(c,c2,4,4)
+no:mnCousins(c,b2,2,2)
+yes:mnCousins(c,c,0,0)

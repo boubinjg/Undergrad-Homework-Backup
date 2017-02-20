@@ -1,0 +1,7 @@
+compiling /home/boubinjg/cse465/boubinTP/summation/summation.pl for byte code...
+/home/boubinjg/cse465/boubinTP/summation/summation.pl:7: warning: singleton variables [H] for powerset/2
+/home/boubinjg/cse465/boubinTP/summation/summation.pl:10: warning: singleton variables [T] for sumAll/1
+/home/boubinjg/cse465/boubinTP/summation/summation.pl compiled, 12 lines read - 2035 bytes written, 4 ms
+yes:summation([2,3,4,5],7)
+yes:summation([2,3,4,5],6)
+yes:summation([2,3,4,5],5)

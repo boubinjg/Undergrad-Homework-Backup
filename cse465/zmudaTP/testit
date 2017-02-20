@@ -1,0 +1,95 @@
+# This script will be run from your top-level term project directory
+# The following directories must be present zpm, zipcodes,band, summation,
+# and mth (for 565 students). 
+# In addition, I will have a data directory filled with test data. You should
+# copy this directory into your area for final compatability testing.
+#
+# You can issue the following command to set up your structure:
+# cp -r ~zmudam/lang/zmudaTP ./jdoeTP
+
+TESTDATA=`pwd`/data
+
+
+echo "                    Z+-"
+cd zpm 
+javac *.java
+c++ -o zpm -std=c++11 *.cpp
+
+for file in `ls $TESTDATA/zpm/*.zpm`
+do
+	echo "DATA FILE = " $file
+	echo "Java"
+	java zpm $file > zpmjava.out
+	echo "C++"
+	./zpm $file > zpmcpp.out
+# This will cycle again and overwrite output files
+# When grading, the output files will be examined here
+done
+echo
+cd ..
+
+
+echo "                    zipcodes"
+cd zipcodes 
+mcs -out:zipcodes.exe *.cs
+
+cp $TESTDATA/zipcodes/zipcodes.txt .
+for ITEM in A B
+do
+	cp $TESTDATA/zipcodes/cities$ITEM.txt cities.txt
+	cp $TESTDATA/zipcodes/zips$ITEM.txt zips.txt 
+	cp $TESTDATA/zipcodes/states$ITEM.txt stats.txt 
+	
+	echo "C#"
+	mono zipcodes.exe
+	echo "Python"
+	python3 zipcodes.py
+
+done
+cd ..
+echo
+
+
+
+echo "                    Summation"
+cd summation
+
+javac *.java
+echo "Java"
+java sum > sumjava.out
+echo "Scheme"
+scheme48 -h 8000000 < sum.scm > sumscm.out
+# Students put a copy of my summation/testHarness.pl in summation directory
+echo "Prolog"
+gplc testHarness.pl --no-top-level > /tmp/junk
+./testHarness > sumpl.out 
+
+echo
+cd ..
+
+
+echo "                    Band Matrix"
+cd band
+cp $TESTDATA/band/main.cpp .
+cp $TESTDATA/band/main.py .
+echo "C++"
+c++ -std=c++11 main.cpp -o band bandMatrix.cpp
+./band > bandcpp.out
+echo "Python"
+python3 main.py > bandpy.out
+
+cd ..
+
+
+#  465 students should not have the mth directory
+if [ -e mth ]; then
+	echo "                    mth Cousin"
+	cd mth 
+	echo "Prolog"
+# Students put a copy of my mth/testHarness.pl in summation directory
+# modify it to illustrate the correctness of your code.
+	gplc testHarness.pl --no-top-level
+	./testHarness > mthpl.out
+	echo
+	cd ..
+fi

@@ -1,0 +1,14 @@
+Welcome to Scheme 48 1.9 (made by panlong on 2013-10-22)
+See http://s48.org/ for more information.
+Please report bugs to scheme-48-bugs@s48.org.
+Get more information at http://www.s48.org/.
+Type ,? (comma question-mark) for help.
+> > ; no values returned
+> ; no values returned
+> ; no values returned
+> ; no values returned
+> > ; no values returned
+> > #t#{Unspecific}
+> #t#{Unspecific}
+> #t#{Unspecific}
+> > 

@@ -1,0 +1,59 @@
+How to run the languages
+
+java
+	javac *.java
+	java MainClass
+c++
+	c++ -o myapp *.cpp
+	myapp
+
+	c++ -std=c++11 -o myapp myapp.cpp 
+	/usr/bin/valgrind -v ./myapp
+
+	c++ -p main.cpp
+	a.out
+	gprof a.out
+
+javascript (interactive and from file)
+	rhino   (^D to get out)
+	rhino scope.js
+python (interactive and from file)
+	Version 2
+	python   (^D to get out)
+	python main.py
+
+	Version 3
+	python3   (^D to get out)
+	python3 main.py
+
+
+prolog (interactive)
+	GLOBALSZ=1000000
+	export GLOBALSZ
+	gprolog
+	from within the interpreter, load file as: [basics].
+	ctrl-D to exit
+perl
+	perl example.pl
+haskell
+	gch sample.hs
+	sample
+lua
+	lua sample.lua
+ruby
+	ruby example.rb
+scheme
+	scheme48 -h 8000000 then (load "basics.scm") or
+	,load "basics.scm"
+	,exit    (to quit)
+
+	or
+
+	scheme48 -h 8000000 < file.scm
+C#
+	mcs -unsafe ex1.cs
+	mono ex1.exe
+sed
+	cat data.in | sed s/\ /,/g
+awk
+	cat data.in | awk -ftest.awk

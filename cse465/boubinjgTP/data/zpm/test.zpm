@@ -1,0 +1,6 @@
+a = 3 ;
+b = a ;;
+PRINT a ;
+PRINT b ;
+a = "abc" ;
+PRINT a ;
